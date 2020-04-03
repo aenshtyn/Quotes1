@@ -1,0 +1,9 @@
+<p>{{quote.author}}</p>
+
+<p> This quote was created was created {{quote.createdDate|dateCount}} days ago by {{quote.name}}</p>
+
+<button (click)= 'quoteDelete(true)' class="fa fa-trash" style= float:right ></button>
+
+<button (click)= 'quoteUpvote()' class="fa fa-arrow-up">{{quote.upvotes}}</button>
+
+<button (click)= 'quoteDownvote()' class="fa fa-arrow-down">{{quote.downvotes}}</button>

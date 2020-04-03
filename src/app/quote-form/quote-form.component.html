@@ -1,0 +1,42 @@
+<div class="jumbotron">
+  <h2 class="text-center">Create a new Quote</h2>
+  <hr>
+  <form (ngSubmit)="submitQuote();" #quoteForm = 'ngForm'>
+    <div class="form-group">
+
+      <label for="name">Name</label>
+      <input type="text" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel' required >
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        <p>Name is required</p>
+      </div>
+    </div>
+    <div class="form-group">
+
+      <label for="quote">Quote</label>
+      <textarea class="form-control" id="quote" rows="4" [(ngModel)]="newQuote.lines" name="quote" #quote="ngModel" required></textarea>
+      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+        <p>Quote is required</p>
+      </div>
+
+    </div>
+    <div class="form-group">
+
+      <label for="name">Author</label>
+      <input type="text" required class="form-control" [(ngModel)]="newQuote.author" name="author" #author='ngModel' required>
+      <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+        <p>Author is required</p>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+
+      <label for="complete">Composed date</label>
+      <input type='date' id="complete" [(ngModel)]="newQuote.createdDate" name="completeDate" #createdDate="ngModel" required>
+      <div [hidden]="createdDate.valid || createdDate.pristine" class="alert alert-danger">
+        <p>Date is required</p>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">Add Quote</button>
+  </form>
+</div>

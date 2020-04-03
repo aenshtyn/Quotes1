@@ -1,0 +1,27 @@
+<div class =  "quote" >
+  <h2>My Favourite Quotes</h2>
+  <hr>
+
+  <div class="row">
+    <div *ngFor=' let quote of quotes;let i = index' class = "container" >
+
+      <div>
+        <p id = {{i}} appHighlight> {{quote.lines}} </p>
+
+        <button (click)='toggleDetails(i)' class="btn-info " > More </button>
+      </div>
+
+      <div *ngIf= 'quote.showAuthor'>
+        <!-- <app-quote-detail  [quote]='quote'  (isUpvote) = 'upvoteQuote($event,i)', (isDownvote) = 'downvoteQuote(event,i)'></app-quote-detail> -->
+        <app-quote-detail  [quote]='quote'  (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
+      </div>
+
+    </div>
+  </div>
+  <hr>
+  <app-quote-form (addQuote) = "addNewQuote($event)"></app-quote-form>
+
+  <div class = "footer">
+    <h6>Made by Aenshtyn <br> 2020</h6>
+  </div>
+</div>
