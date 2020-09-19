@@ -1,6 +1,6 @@
 # Quotes
 
-## Quotes  (https://https://aenshtyn.github.io/Quotes/)
+## Quotes  (https://aenshtyn.github.io/Quotes/)
 
 This is my Quote Ranking App
 
